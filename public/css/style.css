@@ -1,0 +1,69 @@
+#showroom{
+    height: 44px;
+    transition: height 0.3s ease-in-out;
+    /* overflow: hidden; */
+}
+#submenu_showrooms a:hover{
+    /* transform: translatey(-100px); */
+    background-color: rgba(110, 110, 110, 0.336) !important;
+    color:#00652e !important;
+    color:white !important;
+}
+#showroom.open  {
+    height: 125px;
+    /* transform:translatey(0px); */
+}
+
+#icon{
+    transform-origin: center; /* Set rotation origin to center */
+    transition: transform 1s ease; /* Slow down the transition duration */
+
+}
+.rotate{
+    rotate:-180deg !important;
+}
+.active{
+    background: #eb1c24;
+}
+
+.menu-hamburger{
+    /* background: red; */
+}
+.menu-hamburger :hover{
+ cursor:pointer;
+ padding:2px;
+}
+.content{
+    margin: 0px 0px 0px 300px;
+    /* transform: translatex(300px); */
+}
+
+.slowdown{
+    transition: all .3s ease-in-out;}
+.sidebar{
+    transform: translatex(-300px);
+    
+}
+.profile:hover{
+/* padding:2px; */
+transform: scale(.8);
+color: #eb1c24;
+cursor:pointer;
+}
+#logoutbtn{
+    background:#00652e;
+    cursor:pointer;
+}
+#logoutcard{
+    transition: transform height .3s ease;
+    z-index: 1000;
+}
+#logoutbtn:hover{
+    background: rgba(104, 104, 104, 0.521);
+}
+
+.hide{
+    max-height: 0px !important;
+    overflow: hidden;
+    opacity:0;
+}
