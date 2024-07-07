@@ -52,7 +52,7 @@
                             <span class="text-center" style="width:25px; height:25px ; background:red; text-align:right;">&#x2715;</span>
                             {{-- <button class="text-secondary  text-right cursor-pointer btn-sm btn-danger rounded-circle text-white " style="width:30px ; height:30px ;margin-left:auto" onclick="closelogout()">&#x2715;</button> --}}
                         <div class="my-1 p-2 text-white rounded" id='logoutbtn' style="min-width: 200px;">
-                         <a href='/users/logout' class="text-secondary pe-4 rounded-3 fs-6 p-2 flex align-items-center text-white text-decoration-none ">     
+                         <a href='/logout' class="text-secondary pe-4 rounded-3 fs-6 p-2 flex align-items-center text-white text-decoration-none ">     
                             
                              Logout
     

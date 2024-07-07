@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ShowroomController;
+use App\Http\Middleware\AuthenticateMiddleware;
+use Illuminate\Auth\Middleware\Authenticate;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,10 +25,11 @@ Route::post('/register',[AuthController::class,'storeUser'])->name('auth.storeUs
 
 Route::get('/login',[AuthController::class,'index'])->name('auth.login');
 Route::post('/login',[AuthController::class,'check'])->name('auth.check');
+Route::get('/logout',[AuthController::class,'logout'])->name('auth.logout');
 
 
-Route::middleware([])->group(function(){
-    Route::prefix('showrooms')->group(function(){
+  Route::middleware('isauth')->group(function(){
+     Route::prefix('showrooms')->group(function(){
         Route::get('/',[ShowroomController::class,'index'])->name('showrooms.index');
         Route::get('/show/{id}',[ShowroomController::class,'show'])->name('showrooms.show');
         Route::get('/create',[ShowroomController::class,'create'])->name('showrooms.create');
@@ -33,5 +37,5 @@ Route::middleware([])->group(function(){
         Route::get('/edit/{id}',[ShowroomController::class,'edit'])->name('showrooms.edit');
         Route::put('/update/{id}',[ShowroomController::class,'update'])->name('showrooms.update');
         Route::delete('/delete/{id}',[ShowroomController::class,'destroy'])->name('showrooms.destroy');
-    });
-});
+     });
+  });

@@ -6,6 +6,14 @@
       @if ($errors->has('message'))
     <div class="error alert alert-warning">{{ $errors->first('message') }}</div>
 @endif
+       
+    @if (session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+
         <p class="fs-5 p-0 text-center">Login in here</p>
         <form action="{{ route('auth.check') }}" method='POST'>
             @csrf
